@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('./partials/nav.ejs') %>
+
+        
+        <div class="index-top">
+            <h2>Most Expereinced Team In Colorado</h2>
+
+        </div>
+
+        <div class="new-work">
+          
+        </div>
+
+       
+
+        <div class="neuro-head">
+            <h1>Neurofeedback</h1>
+        </div>
+        <div class="grid-neuro">
+            
+
+            <div class="neuro-first">
+                <img class="neuro-firstpix" src="/img/a3.jpg">
+            </div>
+        <div class="neuro-first">
+           
+            
+            <h2>Unlock Your Brain's Potential with Neurofeedback
+            </h2>
+            <p>
+                
+Welcome to  ADHD, Neurofeedback, Biofeedback & Counseling Clinic of Colorado, where we harness the power of neurofeedback to optimize your brain function and enhance your overall well-being. Neurofeedback, also known as EEG biofeedback, is a cutting-edge technique that utilizes advanced technology to help you train your brain for optimal performance.
+
+            </p>
+            <h2>How Does Neurofeedback Work?
+            </h2>
+            <p>
+                During a neurofeedback session, you will be comfortably seated while sensors measure your brainwave activity. You will then engage in various exercises or activities designed to promote desirable brainwave patterns. As you successfully achieve these patterns, you'll receive positive feedback in the form of auditory or visual cues.
+
+Over time, through repetition and reinforcement, your brain learns to maintain these optimal patterns on its own. This leads to improved cognitive function, emotional regulation, and overall mental well-being.
+
+
+            </p>
+            <h2>Why Choose ADHD, Neurofeedback, Biofeedback & Counseling Clinic of Colorado,  for Neurofeedback
+            </h2>
+            <p>
+                At ADHD, Neurofeedback, Biofeedback & Counseling Clinic of Colorado , we are dedicated to providing personalized, evidence-based neurofeedback services tailored to your unique needs. Our team of experienced professionals is committed to helping you unlock your brain's full potential and achieve lasting improvements in your cognitive and emotional well-being.
+
+            </p>
+
+        </div>
+
+       
+        </div>
+        <%- include('./partials/footer.ejs') %>
+     
+        <script>
+            function toggleMobileMenu(menu) {
+                var isOpen = menu.classList.toggle('open');
+                if (!isOpen) {
+                    closeDropdowns(); // Close dropdowns when menu is closed
+                }
+            }
+            
+            // Function to toggle dropdown
+            function toggleDropdown(event) {
+                event.stopPropagation(); // Prevent propagation of the click event
+                var parentListItem = event.target.parentElement;
+                parentListItem.classList.toggle('open');
+            }
+            
+            // Function to close all dropdowns
+            function closeDropdowns() {
+                var dropdowns = document.querySelectorAll('.has-dropdown');
+                dropdowns.forEach(function(dropdown) {
+                    dropdown.classList.remove('open');
+                });
+            }
+            
+            // Close dropdowns when clicking outside of them
+            document.addEventListener('click', function(event) {
+                var dropdowns = document.querySelectorAll('.has-dropdown');
+                dropdowns.forEach(function(dropdown) {
+                    if (!dropdown.contains(event.target)) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+            });
+            
+            // Close dropdowns when the window is resized (for responsiveness)
+            window.addEventListener('resize', function() {
+                closeDropdowns();
+            });
+            
+            // Close dropdowns when the mobile menu is closed
+            document.getElementById('ham-icon').addEventListener('click', function(event) {
+                if (!event.currentTarget.classList.contains('open')) {
+                    closeDropdowns();
+                }
+            });
+
+        // Select all elements with the class 'carousel-slide'
+const slides = document.querySelectorAll('.carousel-slide');
+
+// Initialize a variable to keep track of the current slide index
+let currentSlide = 0;
+
+// Define a function to show a specific slide
+function showSlide(n) {
+  // Hide the current slide by setting its display property to 'none'
+  slides[currentSlide].style.display = 'none';
+  
+  // Calculate the index of the next slide, ensuring it loops back to the beginning or end if necessary
+  currentSlide = (n + slides.length) % slides.length;
+  
+  // Show the next slide by setting its display property to 'block'
+  slides[currentSlide].style.display = 'block';
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    function autoAdvance() {
+        showSlide(currentSlide + 1);
+    }
+
+    // Show the initial slide
+    showSlide(currentSlide);
+
+    // Auto-advance slides every 3 seconds
+    setInterval(autoAdvance, 3000); // Change the interval as needed
+});
+
+                        </script>
+                
+    </body>
+</html>

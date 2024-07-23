@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+     <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+
+        
+
+       
+
+        <div class="index-top">
+            <h2>Most Expereinced Team In Colorado</h2>
+
+        </div>
+
+        <div class="new-work">
+         
+        </div>
+        <div class="grid-index">
+
+        <div class="index-neuro">
+          <div class="index-g">
+          <!-- <h2>What is Neurofeedback</h2>
+            <p>Neurofeedback, also known as EEG biofeedback or neurotherapy, is a non-invasive technique used to train brain activity. It works by monitoring brainwave patterns using sensors placed on the scalp, then providing real-time feedback to the individual, often in the form of visual or auditory cues.</p>
+
+                <p>Through this feedback, individuals can learn to regulate their brainwaves, aiming to achieve a desired state associated with improved cognitive function, emotional regulation, or performance. It's commonly used to address conditions such as ADHD, anxiety, depression, and insomnia, though research is ongoing to explore its potential applications.
+                
+                Overall, neurofeedback offers a promising avenue for enhancing brain function and addressing various neurological and psychological conditions through targeted training of brainwave activity.</p>-->
+                <h2>Welcome to ADHD, Neurofeedback,<br> Biofeedback & Counseling Clinic of Colorado</h2>
+                <p>
+                  At the ADHD, Neurofeedback, Biofeedback & Counseling Clinic of Colorado, we are dedicated to providing comprehensive care and support for individuals of all ages. Our mission is to enhance the well-being of our patients through personalized, evidence-based treatments designed to address ADHD, stress, anxiety, and a variety of other conditions. Our clinic is a place where patients can find understanding, support, and effective solutions for their mental health and developmental challenges.</p>
+                  
+                 <p> We understand that navigating mental health and developmental challenges can be overwhelming. That's why our team of skilled professionals is here to guide you every step of the way. Whether you're seeking help for yourself, your child, or a loved one, we offer a range of services tailored to meet your unique needs. From initial assessment to ongoing treatment, we provide a comprehensive approach that ensures our patients receive the care and support they deserve. Our compassionate and integrative approach ensures that you receive the best possible care in a supportive and welcoming environment.
+                  
+                
+                  </p>
+                </div>
+                <div class="index-g">
+                <img class="index-neuropix1" src="/img/a7.jpg">
+                </div>
+
+        </div>
+        </div>
+
+        <div class="index-benefits">
+            <img class="index-benefitspix" src="/img/a8.jpg">
+            <h2>Long Lasting Benefits</h2>
+
+            <p>The long-lasting benefits of neurofeedback encompass several key areas:
+
+                Improved Brain Function: Neurofeedback enhances the ability to regulate brainwave patterns, resulting in sustained improvements in cognitive function and emotional well-being.
+                
+                Reduced Symptoms: By addressing conditions like ADHD, anxiety, depression, PTSD, and insomnia, neurofeedback can lead to lasting reductions in symptoms, potentially reducing reliance on medication or other interventions.
+                
+                Enhanced Performance: Neurofeedback enables individuals to enter states associated with peak performance, leading to lasting improvements in focus, concentration, and overall performance.</p>
+                
+                <p>Neuroplasticity: Through harnessing the brain's capacity for neuroplasticity, neurofeedback promotes lasting changes in brain function and structure, fostering resilience and adaptability.
+                
+                Reduced Relapse Risk: Neurofeedback complements other therapies by promoting neuroregulation, reducing the risk of relapse or recurrence of symptoms, particularly in conditions such as addiction or traumatic brain injury.
+                
+                Overall, neurofeedback offers the potential for long-term benefits across various aspects of cognitive function, emotional regulation, and overall well-being.</p>
+
+        </div>
+        <%- include('./partials/footer.ejs') %>
+
+
+
+        <script>
+// Function to toggle mobile menu
+//function toggleMobileMenu(menu) {
+  //  var isOpen = menu.classList.toggle('open');
+    //if (!isOpen) {
+      //  closeDropdowns(); // Close dropdowns when menu is closed
+    //}
+//}
+
+// Function to toggle dropdown
+//function toggleDropdown(event) {
+ //   event.stopPropagation(); // Prevent propagation of the click event
+  //  var parentListItem = event.target.parentElement;
+  //  parentListItem.classList.toggle('open');
+//}
+
+// Function to close all dropdowns
+//function closeDropdowns() {
+  //  var dropdowns = document.querySelectorAll('.drop');
+    //dropdowns.forEach(function(dropdown) {
+      //  dropdown.classList.remove('open');
+    //});
+//}
+
+// Close dropdowns when clicking outside of them
+//document.addEventListener('click', function(event) {
+  //  var dropdowns = document.querySelectorAll('.drop');
+    //dropdowns.forEach(function(dropdown) {
+      //  if (!dropdown.contains(event.target)) {
+        //    dropdown.classList.remove('open');
+        //}
+    //});
+//});
+
+// Close dropdowns when the window is resized (for responsiveness)
+//window.addEventListener('resize', function() {
+  //  closeDropdowns();
+//});
+
+// Close "About Us" dropdown when the mobile menu is closed
+//document.getElementById('ham-icon').addEventListener('click', function(event) {
+  //  if (!event.currentTarget.classList.contains('open')) {
+    //    var aboutUsDropdown = document.querySelector('.has-dropdown');
+      //  aboutUsDropdown.classList.remove('open');
+    //}
+//});
+// Function to toggle mobile menu
+// Function to toggle mobile menu
+function toggleMobileMenu(menu) {
+    var isOpen = menu.classList.toggle('open');
+    if (!isOpen) {
+        closeDropdowns(); // Close dropdowns when menu is closed
+    }
+}
+
+// Function to toggle dropdown
+function toggleDropdown(event) {
+    event.stopPropagation(); // Prevent propagation of the click event
+    var parentListItem = event.target.parentElement;
+    parentListItem.classList.toggle('open');
+}
+
+// Function to close all dropdowns
+function closeDropdowns() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+    dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('open');
+    });
+}
+
+// Close dropdowns when clicking outside of them
+document.addEventListener('click', function(event) {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+    dropdowns.forEach(function(dropdown) {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+});
+
+// Close dropdowns when the window is resized (for responsiveness)
+window.addEventListener('resize', function() {
+    closeDropdowns();
+});
+
+// Close dropdowns when the mobile menu is closed
+document.getElementById('ham-icon').addEventListener('click', function(event) {
+    if (!event.currentTarget.classList.contains('open')) {
+        closeDropdowns();
+    }
+});
+
+// Select all elements with the class 'carousel-slide'
+const slides = document.querySelectorAll('.carousel-slide');
+
+// Initialize a variable to keep track of the current slide index
+let currentSlide = 0;
+
+// Define a function to show a specific slide
+function showSlide(n) {
+  // Hide the current slide by setting its display property to 'none'
+  slides[currentSlide].style.display = 'none';
+  
+  // Calculate the index of the next slide, ensuring it loops back to the beginning or end if necessary
+  currentSlide = (n + slides.length) % slides.length;
+  
+  // Show the next slide by setting its display property to 'block'
+  slides[currentSlide].style.display = 'block';
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    function autoAdvance() {
+        showSlide(currentSlide + 1);
+    }
+
+    // Show the initial slide
+    showSlide(currentSlide);
+
+    // Auto-advance slides every 3 seconds
+    setInterval(autoAdvance, 3000); // Change the interval as needed
+});
+
+
+
+</script>
+    </body>
+
+</html>

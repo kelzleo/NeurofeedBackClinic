@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+
+        <div class="grid-team">
+        <div class="team-first">
+            <h1>Dr. KAY SHEEHAN,<br>
+                 MSW, LCSW,<br> ED.D</h1>
+
+                 <img class="team-firstpix" src="/img/a8.jpg">
+
+            <p>Dr. Kay Sheehan is both a licensed clinical social worker (BA, double major: Psychology and Sociology and MSW,
+                University of Minnesota) and also holds her doctorate in Transpersonal Psychology (University of Northern
+                Colorado). She has been practicing over thirty-five years and does individual therapy, family therapy and
+                marriage/couple therapy, power struggle resolution, neurofeedback and biofeedback training. She likes to have a
+                more general practice, because it is more interesting to her, and does have because of two areas of real specialty.
+                    One area is that of Applied Psychophysiology and Biofeedback/Neurofeedback Therapy. She has been working in
+this area for over thirty-five years and is one of the founders of the Colorado Association for Applied
+Psychophysiology and Biofeedback, a past president twice and has held many board positions. She also was a
+board member of the national/international Association for Applied Psychophysiology and Biofeedback and gives
+talks and workshops to other professionals both nationally and internationally, most recently on Traumatic Brain
+Injuries (TBI).
+                
+                
+                    The second area of specialty is Power Struggle Resolution. Her doctoral dissertation was the only
+psychotherapeutic model of power struggle resolution in the international literature. The psychotherapeutic
+model of power struggle resolution she created is for the resolution of power struggles between parents and
+children/adolescents, between adults, and in the work place, where a power struggle is often euphemistically
+referred to as a “personality conflict.” She is finishing her book on the resolution of power struggles.
+                </p>
+                <p>
+                    These two areas dovetail in terms of control issues, the applied psychophysiology and biofeedback deals with inner
+control issues and the power struggle resolution deals with external control issues. Control issues are the bottom
+line issue for any problem whether it is an individual issue or a relationship issue and hence, how she is able to
+maintain a more general practice. She has several subspecialties because of these two areas of expertise, among
+them are: ADHD, learning difficulties, Traumatic Brain Injuries, bipolar disorder, chronic depression, anxiety,
+phobias, obsessive compulsive disorder, PTSD, autism, reactive attachment disorder, Asperger’s, addictions and
+stress related disorders.
+                
+                
+                    In addition to extensive clinical practice, Dr. Sheehan is very knowledgeable in the area of learning disabilities,
+weaknesses and learning styles of both children/adolescents and adults, having been on the Special Services Team
+of the Littleton Public School District and as the Staffing Chairperson.
+                
+                
+                    Dr. Sheehan is also a former Assistant Professor at Metropolitan State University (formerly Metropolitan State
+College) in the Department of Human Services. She continued as a professor until her private practice became full
+time. She continues to teach and present workshops.
+                </p>
+                <p>
+                    In addition to being certified at the highest level in Biofeedback from the only recognized certifying organization,
+Board Certification International Alliance (BCIA), as a Senior Fellow, she is also Board Certified in Neurofeedback.
+                
+                
+                    Dr. Sheehan is also certified at the highest level for EMDR, a psychotherapeutic technique that speeds
+psychotherapy up by many sessions and is excellent for traumatic events and for habits and patterns in which the
+individual knows one thing cognitively, but is still stuck emotionally and behaviorally.
+                
+                
+                    In addition to speaking and giving workshops nationally and internationally, she has served as a member of
+various professional boards, such as the Rocky Mountain Tourette Syndrome Association.
+                </p>
+            
+        </div>
+
+        
+        </div>
+        <%- include('./partials/footer.ejs') %>
+
+        
+        <script>
+function toggleMobileMenu(menu) {
+    var isOpen = menu.classList.toggle('open');
+    if (!isOpen) {
+        closeDropdowns(); // Close dropdowns when menu is closed
+    }
+}
+
+// Function to toggle dropdown
+function toggleDropdown(event) {
+    event.stopPropagation(); // Prevent propagation of the click event
+    var parentListItem = event.target.parentElement;
+    parentListItem.classList.toggle('open');
+}
+
+// Function to close all dropdowns
+function closeDropdowns() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+    dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('open');
+    });
+}
+
+// Close dropdowns when clicking outside of them
+document.addEventListener('click', function(event) {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+    dropdowns.forEach(function(dropdown) {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+});
+
+// Close dropdowns when the window is resized (for responsiveness)
+window.addEventListener('resize', function() {
+    closeDropdowns();
+});
+
+// Close dropdowns when the mobile menu is closed
+document.getElementById('ham-icon').addEventListener('click', function(event) {
+    if (!event.currentTarget.classList.contains('open')) {
+        closeDropdowns();
+    }
+});
+            </script>
+    </body>
+
+</html>

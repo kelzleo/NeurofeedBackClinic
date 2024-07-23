@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+
+        <div class="ad-first">
+            <h1>ADHD</h1>
+            <img class="ad-firstpix" src="/img/b1.jpg">
+            <h2>Introduction to ADHD</h2>
+            <p>
+                
+ADHD, or Attention Deficit Hyperactivity Disorder, is a neurodevelopmental disorder that affects individuals of all ages, though it often manifests in childhood and may continue into adulthood. It is characterized by difficulties in regulating attention, controlling impulses, and managing hyperactivity. 
+
+            
+            
+                Individuals with ADHD may find it challenging to focus on tasks, follow through on instructions, or organize activities. They may also struggle with restlessness, impulsivity, and difficulty waiting their turn. These symptoms can impact various aspects of daily life, including academic performance, work productivity, and social interactions.
+
+It's important to note that ADHD is a complex condition with varying presentations. Some individuals primarily struggle with inattention, while others exhibit more hyperactive and impulsive behaviors. Additionally, many people with ADHD have a combination of both types of symptoms.
+
+            </p>
+            <p>
+                Understanding ADHD is crucial for individuals affected by the disorder, as well as their families, educators, and healthcare providers. By raising awareness and providing support, we can help individuals with ADHD thrive and reach their full potential.
+
+            </p>
+
+            <h2>Types of ADHD</h2>
+            <p>
+                ADHD, or Attention Deficit Hyperactivity Disorder, presents in different ways, and individuals may experience varying combinations of symptoms. There are three main types of ADHD, each characterized by its predominant symptoms:
+
+            </p>
+
+            <h2>Predominantly Inattentive Presentation</h2>
+
+            <p>
+                Individuals with this type of ADHD primarily struggle with inattention. They may have difficulty sustaining attention on tasks, frequently make careless mistakes, and struggle to follow through on instructions or complete tasks. Organization may be a challenge, and they may appear forgetful or easily distracted.
+                This presentation is sometimes referred to as ADD (Attention Deficit Disorder) in popular discourse, although it's officially categorized as a subtype of ADHD.
+            
+            </p>
+
+            <h2>Predominantly Hyperactive-Impulsive Presentation</h2>
+            <p>
+                In this type, hyperactivity and impulsivity are the primary symptoms. Individuals may be excessively restless, fidgety, and have difficulty staying seated. They may also struggle with impulse control, acting without thinking, interrupting others, and having difficulty waiting their turn.
+                This presentation is less common than the predominantly inattentive type and is more frequently observed in younger children.
+             
+            </p>
+            <h2>
+                Combined Presentation
+                </h2>
+                <p>   As the name suggests, individuals with this type exhibit a combination of symptoms from both the inattentive and hyperactive-impulsive presentations. They may struggle with attention, hyperactivity, and impulsivity to varying degrees.
+                    The combined presentation is the most common type of ADHD.
+                </p>
+                <p>
+                    It's important to recognize that ADHD is a spectrum disorder, and individuals may experience symptoms to different degrees of severity. Additionally, symptoms may change over time or in response to various factors such as stress, environment, and life circumstances. A comprehensive evaluation by a qualified healthcare professional is necessary to accurately diagnose and determine the most appropriate treatment approach for each individual.
+
+                </p>
+        </div>
+        <%- include('./partials/footer.ejs') %>
+        
+        <script>
+            function toggleMobileMenu(menu) {
+                var isOpen = menu.classList.toggle('open');
+                if (!isOpen) {
+                    closeDropdowns(); // Close dropdowns when menu is closed
+                }
+            }
+            
+            // Function to toggle dropdown
+            function toggleDropdown(event) {
+                event.stopPropagation(); // Prevent propagation of the click event
+                var parentListItem = event.target.parentElement;
+                parentListItem.classList.toggle('open');
+            }
+            
+            // Function to close all dropdowns
+            function closeDropdowns() {
+                var dropdowns = document.querySelectorAll('.has-dropdown');
+                dropdowns.forEach(function(dropdown) {
+                    dropdown.classList.remove('open');
+                });
+            }
+            
+            // Close dropdowns when clicking outside of them
+            document.addEventListener('click', function(event) {
+                var dropdowns = document.querySelectorAll('.has-dropdown');
+                dropdowns.forEach(function(dropdown) {
+                    if (!dropdown.contains(event.target)) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+            });
+            
+            // Close dropdowns when the window is resized (for responsiveness)
+            window.addEventListener('resize', function() {
+                closeDropdowns();
+            });
+            
+            // Close dropdowns when the mobile menu is closed
+            document.getElementById('ham-icon').addEventListener('click', function(event) {
+                if (!event.currentTarget.classList.contains('open')) {
+                    closeDropdowns();
+                }
+            });
+                        </script>
+    </body>
+
+</html>

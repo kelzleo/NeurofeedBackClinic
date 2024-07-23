@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+
+        <div class="new-work">
+            <%- include('./partials/carousel.ejs') %>
+          </div>
+
+        <div class="qeed-first">
+            <h1>QEEG</h1>
+            <img class="qeed-firstpix" src="/img/b7.jpg">
+            <h2>Understanding qEEG</h2>
+
+            <p>
+                Quantitative Electroencephalography (qEEG) is a sophisticated neuroimaging technique that allows for the precise measurement and analysis of electrical activity in the brain. By placing electrodes on specific scalp locations, we can capture and record brainwave patterns across various frequency bands and brain regions. These patterns are then quantified and analyzed to identify abnormalities or dysregulations in neural activity, providing valuable diagnostic information.
+
+            </p>
+
+            <h2>How qEEG Helps</h2>
+            <p>
+                We recognize the complexity of brain function and the importance of individualized care. qEEG serves as a cornerstone of our diagnostic process, enabling us to uncover subtle patterns in brain activity that may underlie symptoms of conditions such as attention deficits, mood disorders, anxiety, and cognitive impairments. By gaining a comprehensive understanding of each client's unique brain profile through qEEG analysis, we can tailor our treatment approaches to target specific areas of concern with precision and efficacy.
+
+            </p>
+
+
+        </div>
+        <%- include('./partials/footer.ejs') %>
+
+        <script>
+            function toggleMobileMenu(menu) {
+                var isOpen = menu.classList.toggle('open');
+                if (!isOpen) {
+                    closeDropdowns(); // Close dropdowns when menu is closed
+                }
+            }
+            
+            // Function to toggle dropdown
+            function toggleDropdown(event) {
+                event.stopPropagation(); // Prevent propagation of the click event
+                var parentListItem = event.target.parentElement;
+                parentListItem.classList.toggle('open');
+            }
+            
+            // Function to close all dropdowns
+            function closeDropdowns() {
+                var dropdowns = document.querySelectorAll('.has-dropdown');
+                dropdowns.forEach(function(dropdown) {
+                    dropdown.classList.remove('open');
+                });
+            }
+            
+            // Close dropdowns when clicking outside of them
+            document.addEventListener('click', function(event) {
+                var dropdowns = document.querySelectorAll('.has-dropdown');
+                dropdowns.forEach(function(dropdown) {
+                    if (!dropdown.contains(event.target)) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+            });
+            
+            // Close dropdowns when the window is resized (for responsiveness)
+            window.addEventListener('resize', function() {
+                closeDropdowns();
+            });
+            
+            // Close dropdowns when the mobile menu is closed
+            document.getElementById('ham-icon').addEventListener('click', function(event) {
+                if (!event.currentTarget.classList.contains('open')) {
+                    closeDropdowns();
+                }
+            });
+
+            
+            // Select all elements with the class 'carousel-slide'
+const slides = document.querySelectorAll('.carousel-slide');
+
+// Initialize a variable to keep track of the current slide index
+let currentSlide = 0;
+
+// Define a function to show a specific slide
+function showSlide(n) {
+  // Hide the current slide by setting its display property to 'none'
+  slides[currentSlide].style.display = 'none';
+  
+  // Calculate the index of the next slide, ensuring it loops back to the beginning or end if necessary
+  currentSlide = (n + slides.length) % slides.length;
+  
+  // Show the next slide by setting its display property to 'block'
+  slides[currentSlide].style.display = 'block';
+}
+
+// Add an event listener to the previous button
+document.getElementById('prevBtn').addEventListener('click', () => {
+  // When the previous button is clicked, call the showSlide function with the index of the previous slide
+  showSlide(currentSlide - 1);
+});
+
+// Add an event listener to the next button
+document.getElementById('nextBtn').addEventListener('click', () => {
+  // When the next button is clicked, call the showSlide function with the index of the next slide
+  showSlide(currentSlide + 1);
+});
+
+// Show the initial slide when the page loads
+showSlide(currentSlide);
+                        </script>
+    </body>
+</html>
